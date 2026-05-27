@@ -1,47 +1,65 @@
 name: Changeonly Deploy to Salesforce
- 
+
 on:
   push:
     branches:
       - main
- 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Install Salesforce CLI
         run: |
           npm install --global @salesforce/cli
           sf --version
+
       - name: Authenticate to Salesforce
         run: |
           echo "${{ secrets.SALESFORCE_AUTH_URL }}" > authfile.txt
-          sf org login sfdx-url --sfdx-url-file authfile.txt --alias deployment-org --set-default
-      - name: Deploy changed metadata only
+          sf org login sfdx-url \
+            --sfdx-url-file authfile.txt \
+            --alias deployment-org \
+            --set-default
+
+      - name: Detect changed metadata
+        id: changes
         run: |
           PREV="${{ github.event.before }}"
           CURR="${{ github.sha }}"
+
           echo "Previous commit: $PREV"
-          echo "Current commit:  $CURR"
+          echo "Current commit: $CURR"
+
           git fetch --all --prune
-          if git cat-file -e "$PREV"^{commit}; then
-            echo "Previous commit exists. Using git diff."
-            CHANGED_FILES=$(git diff --name-only "$PREV" "$CURR" | grep '^force-app/' || true)
-          else
-            echo "Previous commit not found. Falling back to last commit."
-            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep '^force-app/' || true)
-          fi
+
+          CHANGED=$(git diff --name-only "$PREV" "$CURR" | grep '^force-app/' || true)
+
           echo "Changed files:"
-          echo "$CHANGED_FILES"
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "No Salesforce metadata changes found. Skipping deploy."
-          else
+          echo "$CHANGED"
+
+          echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Deploy changed metadata
+        if: steps.changes.outputs.changed_files != ''
+        run: |
+          echo "${{ steps.changes.outputs.changed_files }}" > changed.txt
+
+          while IFS= read -r file
+          do
+            echo "Deploying: $file"
+
             sf project deploy start \
-              --source-dir $CHANGED_FILES \
+              --source-dir "$file" \
               --target-org deployment-org \
+              --ignore-conflicts \
               --wait 30
-          fi
+          done < changed.txt
