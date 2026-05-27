@@ -8,7 +8,7 @@ public class AccountController {
         Integer offset = (pageNumber - 1) * pageSize;
         return [SELECT Id, Name, Industry FROM Account ORDER BY Name ASC LIMIT :pageSize OFFSET :offset];
     }*/
- @AuraEnabled(cacheable=true)
+ @AuraEnabled(cacheable=true)// this is fpr test
     public static List<Account> getAccounts() {
         return [SELECT Id, Name, Industry, Phone, Type FROM Account LIMIT 10];
     }
