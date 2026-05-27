@@ -10,7 +10,7 @@ public class AccountController {
     }*/
  @AuraEnabled(cacheable=true)// this is fpr test
     public static List<Account> getAccounts() {
-        return [SELECT Id, Name, Industry, Phone, Type FROM Account LIMIT 10];//ddkk
+        return [SELECT Id, Name, Industry, Phone, Type FROM Account LIMIT 10];//ddkkhhhh
     }
 public class AccountContactWrapper {
         @AuraEnabled public List<Account> accounts;
