@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EE_Recrod</fullName>
+    <active>true</active>
+    <label>EE Recrod</label>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>Bangalore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chennai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delhi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hyderabad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pune</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Position_Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Position</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

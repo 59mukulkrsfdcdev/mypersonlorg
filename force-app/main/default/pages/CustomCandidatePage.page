@@ -1,0 +1,54 @@
+<apex:page standardController="Candidate__c" extensions="CandidateExtensionController" setup="false" sidebar="false" showHeader="true" tabStyle="Customer__c">
+    <apex:sectionHeader title="{!$ObjectType.Candidate__c.Label} Edit" subtitle="New{!$ObjectType.Candidate__c.Label}"/>
+    <apex:form >
+        <apex:pageMessages id="errors">
+        </apex:pageMessages>
+    
+        <apex:pageBlock title="Candidate PageBlock">
+        
+         
+            <apex:pageBlockButtons location="Both">
+                <apex:commandButton value="Save" action="{!CustomSave}" reRender="errors"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}" reRender="errors"/>
+            </apex:pageBlockButtons>
+        
+        
+        
+            <apex:pageBlockSection title="Information Section" collapsible="true" columns="2">
+                <apex:inputfield value="{!Candidate__c.Name}"/>
+                <apex:inputfield value="{!Candidate__c.Notice_Period__c}" required="true"/>
+                <apex:inputfield value="{!Candidate__c.Position_Name__c}"/>
+                <apex:inputfield value="{!Candidate__c.Location__c}" required="true"/>
+                <apex:inputfield value="{!Candidate__c.Candidature_Status__c}"/>
+                 <apex:inputfield value="{!Candidate__c.Hiring_Manager__c}"/>
+                
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="Contact Details" collapsible="true" columns="2">
+                 <apex:inputfield value="{!Candidate__c.Contact_Number__c}"/>
+                 <apex:inputfield value="{!Candidate__c.Email_Id__c}"/>
+            
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="Compensation Section" collapsible="true" columns="2">
+                 <apex:inputfield value="{!Candidate__c.Current_CTC__c}"/>
+                 <apex:inputfield value="{!Candidate__c.Expected_CTC__c}"/>
+            
+             </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="Additinal Information" collapsible="true" columns="2">
+                <apex:inputfield value="{!Candidate__c.PAN_Number__c}"/>
+                <apex:inputfield value="{!Candidate__c.Passport_Number__c}"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="Technical Skills" collapsible="true" columns="2">
+                <apex:inputfield value="{!Candidate__c.Technical_Skills__c}"/>
+            </apex:pageBlockSection>
+
+
+
+        
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

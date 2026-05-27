@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="Input1" type ="Integer"  description="For First Input" />
+    
+    <aura:attribute name="Input2" type ="Integer"  description="For Second Input" />
+    <aura:attribute name="Output" type ="Integer"  description="Output" />
+    
+    <lightning:input type="number" value="{!v.Input1}" label ="Please enter your number" requried="true" />
+    
+    <lightning:input type="number" value="{!v.Input2}" label ="Please enter your 2nd number" requried="true" />
+    
+    The output is {!v.Output}<br/>
+    <lightning:button variant="brand" value="Components Method" label="Add" onclick="{!c.doAdd}"/>
+    <lightning:button variant="brand" value="Components Method" label="Sub" onclick="{!c.doSub}"/>
+    <lightning:button variant="brand" value="Components Method" label="Mult" onclick="{!c.doMult}"/>
+    <lightning:button variant="brand" value="Components Method" label="Div" onclick="{!c.doDiv}"/>
+	
+</aura:component>

@@ -1,0 +1,222 @@
+<template>
+    <lightning-card title="Login Portal" icon-name="utility:lock">
+        <div class="slds-p-around_medium">
+            <!-- Login Form -->
+            <template if:true={showLoginForm}>
+                <lightning-input
+                    type="email"
+                    label="Email"
+                    value={email}
+                    onchange={handleEmailChange}
+                    required>
+                </lightning-input>
+                
+                <lightning-input
+                    type="password"
+                    label="Password"
+                    value={password}
+                    onchange={handlePasswordChange}
+                    required>
+                </lightning-input>
+                
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        label="Login"
+                        variant="brand"
+                        onclick={handleLogin}
+                        disabled={isLoading}>
+                    </lightning-button>
+                </div>
+            </template>
+            
+            <!-- User Table Section -->
+            <template if:true={showUserTable}>
+                <div class="slds-m-bottom_medium">
+                    <lightning-button
+                        label="Back to Login"
+                        variant="neutral"
+                        onclick={handleBackToLogin}>
+                    </lightning-button>
+                </div>
+                
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Refresh Users"
+                            variant="brand"
+                            onclick={handleGetUsers}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show Categories"
+                            variant="brand"
+                            onclick={handleGetCategories}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show Products"
+                            variant="brand"
+                            onclick={handleGetProducts}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                </div>
+                
+                <lightning-datatable
+                    key-field="id"
+                    data={users}
+                    columns={userColumns}
+                    hide-checkbox-column
+                    show-row-number-column>
+                </lightning-datatable>
+            </template>
+            
+            <!-- Category Table Section -->
+            <template if:true={showCategoryTable}>
+                <div class="slds-m-bottom_medium">
+                    <lightning-button
+                        label="Back to Login"
+                        variant="neutral"
+                        onclick={handleBackToLogin}>
+                    </lightning-button>
+                </div>
+                
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show Users"
+                            variant="brand"
+                            onclick={handleGetUsers}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Refresh Categories"
+                            variant="brand"
+                            onclick={handleGetCategories}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show Products"
+                            variant="brand"
+                            onclick={handleGetProducts}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                </div>
+                
+                <lightning-datatable
+                    key-field="id"
+                    data={categories}
+                    columns={categoryColumns}
+                    hide-checkbox-column
+                    show-row-number-column>
+                </lightning-datatable>
+            </template>
+            
+            <!-- Product Table Section -->
+            <template if:true={showProductTable}>
+                <div class="slds-m-bottom_medium">
+                    <lightning-button
+                        label="Back to Login"
+                        variant="neutral"
+                        onclick={handleBackToLogin}>
+                    </lightning-button>
+                </div>
+                
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show Users"
+                            variant="brand"
+                            onclick={handleGetUsers}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show Categories"
+                            variant="brand"
+                            onclick={handleGetCategories}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Refresh Products"
+                            variant="brand"
+                            onclick={handleGetProducts}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                </div>
+                
+                <lightning-datatable
+                    key-field="id"
+                    data={products}
+                    columns={productColumns}
+                    hide-checkbox-column
+                    show-row-number-column>
+                </lightning-datatable>
+            </template>
+            
+            <!-- Show Data Buttons (visible after login) -->
+            <template if:true={showDataButtons}>
+                <div class="slds-m-top_large slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show All Users"
+                            variant="brand"
+                            onclick={handleGetUsers}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show All Categories"
+                            variant="brand"
+                            onclick={handleGetCategories}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button
+                            label="Show All Products"
+                            variant="brand"
+                            onclick={handleGetProducts}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+            
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <div class="slds-m-top_medium">
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </div>
+            </template>
+            
+            <!-- Error Message -->
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-theme_error slds-m-top_medium">
+                    {error}
+                </div>
+            </template>
+            
+            <!-- Success Message -->
+            <template if:true={successMessage}>
+                <div class="slds-notify slds-notify_alert slds-theme_success slds-m-top_medium">
+                    {successMessage}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

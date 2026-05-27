@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="User Management" icon-name="standard:people">
+        <div class="slds-p-around_medium">
+            <lightning-button
+                label="Get All Users"
+                variant="brand"
+                onclick={handleGetUsers}
+                disabled={usersLoading}
+                class="slds-m-bottom_medium">
+                <span if:true={usersLoading}>
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    Loading Users...
+                </span>
+                <span if:false={usersLoading}>Get All Users</span>
+            </lightning-button>
+
+            <template if:true={showUsersTable}>
+                <lightning-datatable
+                    key-field="id"
+                    data={usersData}
+                    columns={usersColumns}
+                    hide-checkbox-column
+                    show-row-number-column
+                    default-sort-direction="asc"
+                    sorted-direction="asc"
+                    sorted-by="id">
+                </lightning-datatable>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-theme_error slds-m-top_medium" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small">
+                        <lightning-icon icon-name="utility:error" size="x-small"></lightning-icon>
+                    </span>
+                    <h2>{error}</h2>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

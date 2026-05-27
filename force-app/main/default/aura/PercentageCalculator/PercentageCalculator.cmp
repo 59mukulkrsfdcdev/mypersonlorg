@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="WholeNumber" type="integer" access="public"/>
+    <aura:attribute name="percentage" type= "integer" access="public"/>
+    <!-- public string name(apex class) -->
+    <div class = "slds-p-around_small">
+        <lightning:input type="number" name="input1" label="Enter a number" 
+                         value="{!v.WholeNumber}"/>
+         <lightning:input type="number" name="input1" label="Enter a perdentage" 
+                         value="{!v.percentage}" formatter ="percent-fixed"/>
+        <br/>
+        {!v.WholeNumber}<br/>
+        {!v.percentage}<br/><br/>
+        {!div(mult(v.WholeNumber,v.percentage),100)}
+        
+    </div>
+</aura:component>

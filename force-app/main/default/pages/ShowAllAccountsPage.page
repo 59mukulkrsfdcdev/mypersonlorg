@@ -1,0 +1,18 @@
+<apex:page controller="ShowAllAccountsController" action="{!GetAllAccount}" setup="false" sidebar="false" showHeader="true" tabStyle="Customer__c" >
+<apex:sectionHeader title="Accounts" subtitle="All Accounts"/>
+<apex:form >
+    <apex:pageblock title="Show All Accounts: ({!lstAccount.size})">
+    
+        <apex:pageBlocktable value="{!lstAccount}" var="acc">
+        <apex:column value="{!acc.name}"/>
+        <apex:column value="{!acc.rating}"/>
+        <apex:column value="{!acc.industry}"/>
+        <apex:column value="{!acc.annualrevenue}"/>
+        <apex:column value="{!acc.type}"/>
+        <apex:column value="{!acc.Active__c}"/>
+        </apex:pageBlocktable>
+    
+    </apex:pageblock>
+</apex:form>
+  
+ </apex:page>

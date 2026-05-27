@@ -1,0 +1,6 @@
+<apex:page showHeader="true" setup="true" sidebar="true" >
+Salesforce provides a set of standard object and we have the provision <br/>
+to create our own custom object to leverage the existing features. <br/><br/>
+To perfrom the DML manipulation through programmatically, salesforce provides <br/>
+a separte class for each object as below.
+ </apex:page>

@@ -1,0 +1,10 @@
+<apex:page controller="CustomController">
+ CustomerId is......: {!customerID} <br/>
+ 
+ Customer Name is.....: {!customerName}<br/>
+ Customer Address is...: {!Address}<br/>
+ Customer email id ... : {!emailID}<br/>
+ Customer date of birth...: {!dob}<br/>
+ 
+  
+ </apex:page>

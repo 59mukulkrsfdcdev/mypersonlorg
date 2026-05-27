@@ -1,0 +1,34 @@
+<apex:page controller="AccountSearchController" setup="false" sidebar="false" showHeader="true" tabStyle="Hiring_Manager__c">
+    <apex:sectionHeader title="Search" subtitle="Accounts Search"/>
+        
+        <apex:form >
+            <apex:pageblock title="Search Accounts">
+                <apex:pageBlockSection title="Search Accounts By Name" columns="2" collapsible="false">
+                    <apex:inputtext label="Enter Account Name" html-placeholder="Enter Search Text" value="{!searchTest}"/>
+                    <apex:commandButton value="Search Accounts" action="{!SearchAccount}" reRender="pgBlock"/>        
+                </apex:pageBlockSection>
+            </apex:pageblock>
+            
+            <apex:pageblock title="Search Results: ({!lstAccount.size}) " id="pgBlock">
+                <apex:pageBlockTable value="{!lstAccount}" var="acc">
+                
+                    <apex:column headerValue="Account Name">
+                        <apex:outputLink value="/{!acc.id}" target="_blank">
+                            {!acc.Name}
+                        </apex:outputLink>
+                    </apex:column>
+                  <!--  <apex:column value="{!acc.name}"/> -->
+                     <apex:column value="{!acc.Industry}"/>
+                      <apex:column value="{!acc.Rating}"/>
+                       <apex:column value="{!acc.type}"/>
+                        <apex:column value="{!acc.AnnualRevenue}"/>
+                         <apex:column value="{!acc.phone}"/>
+                          <apex:column value="{!acc.fax}"/>
+                </apex:pageBlockTable>
+            
+            </apex:pageblock>
+            
+        </apex:form>
+  
+  
+</apex:page>

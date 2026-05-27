@@ -1,0 +1,15 @@
+<apex:page setup="false" standardController="Position__c" sidebar="false" showHeader="true" tabStyle="Hiring_Manager__c">
+
+    <apex:detail inlineEdit="false" relatedList="false" showChatter="true"/>
+    
+     
+   <apex:relatedList list="ActivityHistories" pageSize="3"/>
+   
+    
+    
+    
+    
+       
+ 
+ 
+</apex:page>

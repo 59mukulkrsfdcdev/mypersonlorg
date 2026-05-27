@@ -1,0 +1,570 @@
+<apex:page standardController="Account" renderAs="pdf">
+   <html>
+<!--##############5TH PAGE#############-->
+<body>
+    <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Features</h>&nbsp;</td>
+            </tr>
+    </table>
+    (Transform Edition)[1/4]
+    <table border="1">
+       <th> Content Distribution and Management</th>
+     <th>  <tr><td>Content</td></tr></th>
+        <tr><td>Admin shall be able to upload, assign and manage content hierarchy as per specific
+business needs</td></tr>
+        
+        <tr><td>Content Management</td></tr>
+        <tr><td>Admin shall be able to configure content visibility and distribution based on user's role,
+team, channel and other metadata</td></tr>
+        <tr><td>Poster of the day</td></tr>
+        <tr><td>Functionality to share a new post daily with the users to enable behaviors that drive
+customer engagement and relationships</td></tr>
+        <tr><td>Quick Links</td></tr>
+        <tr><td>Functionality to share links to useful company resources, systems and other applications
+with users from the platform for seamless user experience</td></tr>
+        <tr><td>Live Videos</td></tr>
+        <tr><td>Functionality to share links to stream videos and live sessions with users from Youtube
+
+Content shall be provided by the client.</td></tr>
+    </table>
+    
+    <table border="1">
+       <th> Dynamic Content Personalization</th>
+     <th>  <tr><td>Dynamic Sales Presentations</td></tr></th>
+        <tr><td>Users shall be able to create customized sales presentations dynamically as per their
+specific needs</td></tr>
+        
+        <tr><td>PitchAI</td></tr>
+        <tr><td>Users shall be able to access ready to use sales pitch, product insights, objection
+handling and customer insights to drive effective customer conversations</td></tr>
+        <tr><td>Digital Visiting Card</td></tr>
+        <tr><td>Users shall be able to create digital visiting cards that they can share with customers to
+establish credibility and connect
+
+Personalization and customization for customers shall require basic inputs
+from the users.
+
+Content shall be provided by the client.</td></tr>
+        
+    </table>
+   
+</body>
+</html>
+<!--##############6TH PAGE#############-->
+    <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+     <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Features</h>&nbsp;</td>
+            </tr>
+    </table> 
+         (Transform Edition)[2/4]
+    <table border="1">
+       <th> User Management and Access Control</th>
+     <th>  <tr><td>Content Privacy Configuration</td></tr></th>
+        <tr><td>Admin shall be able to restrict content access and shareability as per compliance
+guidelines</td></tr>
+        
+        <tr><td>User Access Management</td></tr>
+        <tr><td>Admin shall be able to manage user details and access control</td></tr>
+        
+    </table>
+    
+    <table border="1">
+       <th> Performance Intelligence</th>
+     <th>  <tr><td>Content Intelligence</td></tr></th>
+        <tr><td>Admin and managers shall be able to access insights and intelligence on what content is
+being used and where to drive sales and marketing alignment</td></tr>
+        
+        <tr><td>People Intelligence</td></tr>
+        <tr><td>Admin and managers shall be able to access insights and intelligence on sales rep
+behaviours and activity to identify patterns that help drive revenue</td></tr>
+        <tr><td>Manager Insights</td></tr>
+        <tr><td>Admin and managers shall be able to access intelligence on user activities, leaderboards
+and trend analysis for managers across hierarchy</td></tr>
+        
+    </table>
+        
+         <table border="1">
+       <th> Learning Journeys and Administration</th>
+     <th>  <tr><td>Configurable Learning Journeys</td></tr></th>
+        <tr><td>Admin shall be able to create learning journeys for users with configurable content
+visibility and distribution based on user's role, team, channel and other metadata</td></tr>
+        
+        <tr><td>Course Configurations</td></tr>
+        <tr><td>Admin shall be able to upload, assign and update bite sized learning content for users in
+image, video, document and quiz format with secure access control</td></tr>
+        <tr><td>Daily Quiz Challenges</td></tr>
+        <tr><td>Gamified quizzes to assess product knowledge and assess skill gaps. Configurable
+leaderboards for the daily quizzes to drive user engagement and adoption allowing users
+to compete with their colleagues</td></tr>
+             <tr><td>Certifications and Assessmentss</td></tr>
+                <tr><td>Admin, along with sharpsell team, can reward the users for course and assessment
+completion with certificates.
+
+Content shall be provided by the client.</td></tr>
+    </table>
+  </div>
+    <!--##############7TH PAGE#############-->
+    <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+     <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Features</h>&nbsp;</td>
+            </tr>
+    <tr>
+        <td></td>
+		<td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Transform Edition)[3/4]</h3></td>
+        </tr>
+         </table> 
+    <table border="1">
+       <th> Learning and Skill Gap Analytics</th>
+     <th>  <tr><td>Learning Analytics and Insights</td></tr></th>
+        <tr><td>Admin shall be able to view and download reports on learning adoption, completion and
+scores</td></tr>
+        
+        <tr><td>Activity and Performance Dashboards</td></tr>
+        <tr><td>Admin shall be able to view the progress of individual user with courses undertaken,
+completed, and scores for each learning module</td></tr>
+        <tr><td>Dynamic Report Console</td></tr>
+        <tr><td>Admin shall be able to generate customized reports based on the grouping of the users
+under different properties</td></tr>
+        <tr><td>Manager Insights</td></tr>
+        <tr><td>Admin and managers shall be able to access intelligence on user activities, leaderboards
+and trend analysis for managers across hierarchy</td></tr>
+        
+    </table>
+    
+    <table border="1">
+       <th> AI Practice Role Plays</th>
+     <th>  <tr><td>AI Practice Role Plays</td></tr></th>
+        <tr><td>Users shall be able to access AI powered practice role plays and personalized coaching</td></tr>
+        
+        <tr><td>Roleplay and Reviewer Management</td></tr>
+        <tr><td>Admin shall be able to configure, assign and update role play review responsibilities</td></tr>
+        <tr><td>Roleplay Reviewer Console</td></tr>
+        <tr><td>Admin and managers shall be able to access dashboard and control panel for AI practice
+role plays</td></tr>
+        
+    </table>
+        
+         <table border="1">
+       <th> White Labeling, Add Ons and Version Control</th>
+     <th>  <tr><td>Company Branding</td></tr></th>
+        <tr><td>Admin shall be able to create learning journeys for users with configurable content
+visibility and distribution based on user's role, team, channel and other metadataAdmin shall be able to configure the look and feel of the platform as per your company
+branding guidelines with configurable colors, fonts and images</td></tr>
+        
+        <tr><td>White Labeling</td></tr>
+        <tr><td>Admin shall be able to configure the app name, icon and signatures for seamless user
+experience and branding</td></tr>
+        <tr><td>App Release Control</td></tr>
+        <tr><td>Admin shall be able to control app release management, with soft and hard app updates
+to make sure users are always using the right version of the product</td></tr>
+            
+    </table>
+  </div>
+    <!--##############8TH PAGE#############-->
+    
+    <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+     <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Features</h>&nbsp;</td>
+            </tr>
+    </table> 
+         (Transform Edition)[4/4]
+    <table border="1">
+       <th> Onboarding and Customer Success</th>
+     <th>  <tr><td>Video and Document Guides</td></tr></th>
+        <tr><td>Admin shall be provided with standard sharpsell guides to help them use the admin panel</td></tr>
+        
+        <tr><td>Client Onboarding Training</td></tr>
+        <tr><td>Dedicated training sessions by product experts from sharpsell on platform administration,
+configuration settings, and driving adoption for admins and managers</td></tr>
+        <tr><td>Premium Admin Support</td></tr>
+        <tr><td>Admins and managers will be provided prioritized support from our customer success
+team for faster query resolution</td></tr>
+        <tr><td>Project and Customer Success</td></tr>
+        <tr><td>Dedicated business success manager from the sharpsell team will support business
+outcomes and work proactively with users and stakeholders to provide business
+intelligence and manage the Admin</td></tr>
+         <tr><td>End-User Support</td></tr>
+         <tr><td>End-users will be provided with in-app chat feature to connect to the support team to get
+their queries resolved</td></tr>
+        
+    </table>
+    
+    <table border="1">
+       <th> Infrastructure, Integrations and Automation</th>
+     <th>  <tr><td>High Availability and DR support</td></tr></th>
+        <tr><td>Scalable server infrastructure with High Availability and Disaster Recovery support to
+power business critical systems</td></tr>
+        
+        <tr><td>RSSO Integration</td></tr>
+        <tr><td>SSO integration with for user authentication and onboarding</td></tr>
+        <tr><td>Hierarchy Data Automation</td></tr>
+        <tr><td>Integration with data systems to automate user meta data sync for secure authentication
+and reporting</td></tr>
+         <tr><td>Professional Services</td></tr>
+         <tr><td>Dedicated product and engineering bandwidth to support dynamic business needs</td></tr>
+        
+    </table>
+        
+        
+  </div>
+    <!--##############18TH PAGE#############-->
+    
+    <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+         <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Service Levels</h>&nbsp;</td>
+            </tr>
+    </table>
+        [1/4]
+        <table border="1">
+            <th>Severity 1 (Urgent)</th>
+             <tr><td>Definition:</td></tr>
+        <tr><td>More than 25% of users impacted.</td></tr>
+            <tr><td>Examples:</td></tr>
+        <tr><td>Login Is not working.</td></tr>
+             <tr><td>Action:</td></tr>
+            
+              <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+             From sharpsell: Communication from the sharpsell support team and the SPOC
+via email and phone call within 60 mins of a Sev1 issue being identified at
+sharpsell.
+        </span>
+    </li>
+               
+                 </ul>
+                  <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              From Client: Email and Phone Call from Client SPOC to the sharpsell support team
+and the SPOC within 60 mins of a Sev1 issue being identified at sharpsell.
+        </span>
+    </li>
+               
+                 </ul>
+                  <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              All hands on the deck. Send regular emails to the client about the status every 2
+hours.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+             
+			 <tr><td>Resolution:</td></tr>
+             
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Permanent Resolution or acceptable work around, within 4 hours from the time the
+incident is reported.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              A number of issues get addressed through a code-push on the server or a data
+sync on the mobile. Users just need to restart the app and sync the device once.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              In case of an Android App issue, we shall provide a fix and make it available on
+Playstore, so that users can be unblocked immediately.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              For iOS, if we need to go through AppStore submission (For binary builds), the
+SLA cannot be met and depends on approvals from Apple.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+             
+             <tr><td>RCA:</td></tr>
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              RCA should be available and provided to the client within 5 business days.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+        </table>
+  </div>
+    
+    <!--##############19TH PAGE#############-->
+    <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+         <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Service Levels</h>&nbsp;</td>
+            </tr>
+    </table>
+        [2/4]
+        <table border="1">
+            <th>Severity 2 (High Severity)</th>
+             <tr><td><b>Definition:</b></td></tr>
+        <tr><td>More than 10% up to 25% of all users impacted.</td></tr>
+            <tr><td><b>Examples:</b></td></tr>
+        <tr><td>Existing users are able to continue working, however, new logins are impacted.</td></tr>
+             <tr><td><b>Action:</b></td></tr>
+            <tr><td></td></tr>
+            <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              From sharpsell: Communication from the sharpsell support team and the SPOC
+via email and phone call within 60 mins of a Sev2 issue being identified at
+sharpsell.
+        </span>
+    </li>
+               
+                 </ul>
+                <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              From Client: Email and Phone Call from Client SPOC to the sharpsell support team
+and the SPOC within 60 minutes of a Sev2 issue being identified at sharpsell.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Sharpsell support team notifies the client within 60 mins with issue validation, from
+the time or sharpsell's internal monitors detect the same.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Send regular emails to the client about the status every 4 hours.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+            
+			 <tr><td><b>Resolution:</b></td></tr>
+             
+             
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Permanent Resolution or acceptable work around, within 16 hours from the time the
+incident is reported.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              A number of issues get addressed through a code-push on the server or a data
+sync on the mobile. Users just need to restart the app and sync the device once.
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              In case of an Android App issue, we shall provide a fix and make it available on
+Playstore, so that users can be unblocked immediately.
+        </span>
+    </li>  </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              For iOS, if we need to go through AppStore submission (For binary builds), the
+SLA cannot be met and depends on approvals from Apple.
+        </span>
+    </li> </ul>
+                 </td></tr>
+             
+             <tr><td><b>RCA:</b></td></tr>
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              RCA should be available and provided to the client within 5 business days.
+        </span>
+    </li>
+          </ul>
+                 </td></tr>
+        </table>
+  </div>
+    <!--##############20TH PAGE#############-->
+    
+    <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+         <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Service Levels</h>&nbsp;</td>
+            </tr>
+    </table>
+        [3/4]
+        <table border="1">
+            <th>Severity 3 (Medium Severity)</th>
+             <tr><td><b>Definition:</b></td></tr>
+        <tr><td>Less than 10% of users impacted.</td></tr>
+            <tr><td><b>Examples:</b></td></tr>
+        <tr><td>Some new content is not available for a few users.</td></tr>
+             <tr><td><b>Action:</b></td></tr>
+            <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Sharpsell support team responds to the client within 4 hours with issue validation,
+from the time sharpsell's support team is notified of the issue by a client SPOC
+through an email.
+        </span>
+    </li>
+               
+                 </ul>
+                <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+             Clients shall be provided with the release date based on the effort. Client facing
+teams to communicate any changes.
+        </span>
+    </li>
+               
+                 </ul>
+                </td></tr>
+              
+           
+			 <tr><td><b>Resolution:</b></td></tr>
+             <tr><td>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+             The responses for the S3 issues shall be provided on a real time basis for the ones
+that were reported earlier and an acceptable solution is readily available. (e.g. App
+installation, Login related issues, and basic workflow related questions as part of
+the current levels of deployment).
+        </span>
+    </li>
+               
+                 </ul><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Permanent Resolution or acceptable work around, within 2 days from the time the
+incident is reported.
+        </span>
+    </li> </ul>
+                 </td></tr>
+             
+            
+             <tr><td><b>RCA:</b></td></tr>
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+               Sev 3 incidents with a recurrence of more than 5 times a week, need to be
+provided a RCA within 5 days.
+        </span>
+    </li>
+               
+                 </ul>
+                </td></tr>
+        </table>
+  </div>
+    <!--##############21TH PAGE#############-->
+     <div style="page-break-after: always;">
+    <!-- whatever to output the ContentVersion -->
+         <table border="1">
+        <tr>
+       <td> <apex:image value="{!$Resource.Sharpsell}" width="50px" style="text-align:left"/></td>
+    <td> <h>&nbsp;&nbsp;&nbsp;Service Levels</h>&nbsp;</td>
+            </tr>
+    </table>
+        [4/4]
+        <table border="1">
+            <th>Severity 4 (Low Severity)</th>
+             <tr><td><b>Definition</b></td></tr>
+        <tr><td>Less than 1% of users impacted.</td></tr>
+            <tr><td><b>Examples:</b></td></tr>
+        <tr><td>New Content is not loaded properly for one particular user. Device specific issue.</td></tr>
+             <tr><td><b>Action:</b></td></tr>
+            <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Sharpsell support team responds to the client within 4 hours with issue validation,
+from the time sharpsell's support team is notified of the issue by a client SPOC
+through an email.
+        </span>
+    </li>
+               
+                 </ul><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+             Clients shall be provided with the release date based on the effort. Client facing
+teams to communicate any changes.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+              
+           
+			 <tr><td><b>Resolution:</b></td></tr>
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              The responses for the S3 issues shall be provided on a real time basis for the ones
+that were reported earlier and an acceptable solution is readily available. (e.g. App
+installation, Login related issues, and basic workflow related questions as part of
+the current levels of deployment).
+        </span>
+    </li>
+               
+                 </ul>
+                 <ul>
+                 <li>
+        <span style="padding-left: 10px;">
+             Permanent Resolution or acceptable work around, within 2 days from the time the
+incident is reported.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+             
+            
+             <tr><td><b>RCA:</b></td></tr>
+             <tr><td><ul>
+                 <li>
+        <span style="padding-left: 10px;">
+              Sev 4 incidents with a recurrence of more than 5 times a week, need to be
+provided a RCA within 5 days.
+        </span>
+    </li>
+               
+                 </ul></td></tr>
+        </table>
+  </div>
+</apex:page>

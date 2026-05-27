@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="Whom" type="string" Default="PRAVEEN" access="public"/>
+    <aura:attribute name="Colorplate" type="string[]" Default="['red','blue']" access="public"/>
+    <aura:attribute name="Colorplateee" type="list" Default="['red','white']" access="public"/>
+    <aura:attribute name="Colorplatee" type="set" Default="['red','green']" access="public"/>
+    
+    welcome {!v.Whom} color: {!v.Colorplate[0]}
+    <br/>
+    <lightning:input aura:id="testInput" lable="Enter Age" />
+    
+    <lightning:button value="Components Method" label="Component Method" onclick="{!c.doClick}"/>
+</aura:component>

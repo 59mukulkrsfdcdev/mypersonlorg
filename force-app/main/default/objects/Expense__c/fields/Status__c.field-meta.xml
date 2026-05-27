@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Approval_Status__c ,&quot;approved&quot;,
+IMAGE(&quot;https://fingertiptechnologies-dev-ed--c.visualforce.com/resource/1652855910000/Approved&quot;,&quot;approved&quot;),
+&quot;pending&quot;, IMAGE(&quot;https://fingertiptechnologies-dev-ed--c.visualforce.com/resource/1652855880000/Pending&quot;,
+&quot;pending&quot;),
+&quot;rejected&quot;, IMAGE(&quot;https://fingertiptechnologies-dev-ed--c.visualforce.com/resource/1652855850000/Rejected&quot;,
+&quot;rejected&quot;),IMAGE(&quot;https://fingertiptechnologies-dev-ed--c.visualforce.com/resource/1652855804000/Submitted&quot;,
+&quot;submitted&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

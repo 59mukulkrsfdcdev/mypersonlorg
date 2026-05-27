@@ -1,0 +1,17 @@
+<aura:component controller="AccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="mydata" type="Account"/>
+    <aura:attribute name="mycolumdata" type="list"/>
+    <aura:attribute name="count" type="integer" default="1" />
+<aura:attribute name="allAccountsLoaded" type="boolean" default="false" /> 
+<aura:attribute name="dataToShow" type="List" default="false" /> 
+
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <div style="height: 190px;overflow-x: scroll;" onscroll="{!c.doinit}">
+
+         <lightning:datatable data="{!v.mydata}" 
+                         columns="{!v.mycolumdata}"
+                         keyField="id"
+                         />
+</div>
+   
+</aura:component>

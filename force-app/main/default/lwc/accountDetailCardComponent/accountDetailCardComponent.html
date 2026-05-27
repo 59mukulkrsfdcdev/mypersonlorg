@@ -1,0 +1,48 @@
+<template>
+    <div>
+        <lightning-card icon-name="standard:account" footer="Copyright Reserved by Praveen Kumar">
+            <div slot="title">
+                Account <br/>
+                <b>Praveen Kumar</b>
+
+
+            </div>
+            <div slot="actions">
+                <lightning-button label="Follow" icon-name="utilty:add"></lightning-button> &nbsp;&nbsp;&nbsp;
+                <lightning-button-group>
+                    <lightning-button label="New Contact" variant="neutral"></lightning-button>
+
+                    <lightning-button label="New Opportunity" variant="neutral"></lightning-button>
+
+                    <lightning-button label="New Case"  icon-name="utilty:question"></lightning-button>
+                    <lightning-button-menu alternative-text="Show More" menu-alignment="auto">
+                            <lightning-menu-item label="New Contact" prefix-icon-name="utility:add"></lightning-menu-item>
+                            <lightning-menu-item label="New Opportunity" prefix-icon-name="utility:add"></lightning-menu-item>
+                            <lightning-menu-item label="New Case" prefix-icon-name="utility:add"></lightning-menu-item> 
+                            
+                    </lightning-button-menu>
+
+                </lightning-button-group>
+
+            </div>
+            <div slot="footer">
+                <lightning-badge label="New Customer"> </lightning-badge> </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Account Name</th>
+                        <th>Rating </th>
+                        <th>Industry </th>
+                        <th>Annual Income</th>
+                    </tr>
+                    <tr>
+                        <td>Praveen Kumar</td>
+                        <td>Hot</td>
+                        <td>Banking</td>
+                    <td>200000</td>
+                    </tr>
+                </table>
+            </div>
+        </lightning-card>
+    </div>
+</template>
