@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Accounts">
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={accountColumns}
+        ></lightning-datatable>
+    </lightning-card>
+
+    <lightning-card title="Contacts">
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={contactColumns}
+        ></lightning-datatable>
+    </lightning-card>
+
+    <lightning-button
+        label="Send Wrapper Data"
+        onclick={handleSendData}
+        variant="brand"
+        class="slds-m-top_medium"
+    ></lightning-button>
+</template>

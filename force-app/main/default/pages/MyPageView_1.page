@@ -1,0 +1,144 @@
+<apex:page controller="MyPageview_1ApexController">
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="/soap/ajax/43.0/connection.js" type="text/javascript"></script>
+        <script src="/soap/ajax/43.0/apex.js" type="text/javascript"></script>
+        </head>
+        <style>
+            
+            .maincontainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .chart {
+            width:350px;
+            // height:300px;
+        }
+        div{
+            
+        }
+        .containerhead{
+            width: 100%;
+            height: 22px;
+            background-color: beige;
+            color: #4353ad;
+            font-size: 18px;
+            text-align: left;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .maincontainerhead{
+            width: 100%;
+            /* height: 22px; */
+            background-color: beige;
+            color: #4353ad;
+            font-size: 18px;
+            text-align: left;
+            padding: 10px;
+            font-weight: bold;
+            /* margin-left: 52px;*/
+            
+        }
+        label {
+            vertical-align: top;
+        }
+        </style>
+        <body>
+            <div class="maincontainer">
+                <div class="maincontainerhead">
+                    <label for="profile">Profile</label>
+                        <select name="profile" id="profile">
+                        <option value="System Administrator">System Administrator</option>
+                        <option value="Training Platform Profile">Training Platform Profile</option>
+                        <option value="Chatter Free User">Chatter Free User</option>
+                        </select>
+                        <label for="user">User</label>
+                        <select name="user" id="user">
+                        <option value="Praveen Kumar">Praveen Kumar</option>
+                        <option value="Sunil George">Sunil George</option>
+                        <option value="Rakesh Reddy">Rakesh Reddy</option>
+                        <option value="Shebin Mathew">Shebin Mathew</option>
+                        </select>
+                        <label for="startdate">Start Date</label>
+                        <input type="date" id="startdate" name="startdate"/>
+                        <label for="enddate">End Date</label>
+                        <input type="date" id="enddate" name="enddate"/>
+                        <button onclick="applyFilter()">Apply Filter</button>
+                        </div>
+                        <!-- Chart containers remain unchanged -->
+                        <div class="container">
+                        <div class="containerhead">Arun Kumar</div>
+                        <div class="chart" id="chart_div1"></div>
+                        <div class="chart" id="chart_div2"></div>
+                        <div class="chart" id="chart_div3"></div>
+                        <div class="chart" id="chart_div4"></div>
+                        </div>
+                        <!-- Other chart containers -->
+                        </div>
+                        </body>
+                        <script type="text/javascript">
+                        google.charts.load('current', {'packages':['corechart']});
+                                           google.charts.setOnLoadCallback(starter);
+                                           
+                                           function drawChart(chartId, chartType, chartData) {
+                            var data = google.visualization.arrayToDataTable(chartData);
+                            
+                            var options = {
+                                title: (chartType === 'Donut') ? 'My Daily Activities' : 'Number of pages by Date',
+                                pieHole: (chartType === 'Donut') ? 0.4 : null,
+                                width: 400,
+                                bar: { groupWidth: '95%' },
+                                legend: { position: 'none' },
+                            };
+                            
+                            var container = document.getElementById(chartId);
+                            var chart = (chartType === 'Donut') ? new google.visualization.PieChart(container) : new google.visualization.ColumnChart(container);
+                            chart.draw(data, options);
+                        }
+        
+        function applyFilter() {
+            var user = document.getElementById('user').value;
+              var startDate = document.getElementById('startdate').value;
+    var endDate = document.getElementById('enddate').value;
+
+    // Convert dates to correct format (YYYY-MM-DD)
+    if (startDate) startDate = new Date(startDate).toISOString().split('T')[0];
+    if (endDate) endDate = new Date(endDate).toISOString().split('T')[0];
+            console.log('Applying filter with User:', user, 'Start Date:', startDate, 'End Date:', endDate);
+            
+            // Call Apex method using Visualforce remoting
+            Visualforce.remoting.Manager.invokeAction(
+                'MyPageview_1ApexController.getChartData',
+                user,
+                new Date(startDate),
+                new Date(endDate),
+                function(result, event) {
+                    if (event.status) {
+                        // Process the returned chart data
+                        result.forEach(function(chart) {
+                            drawChart(chart.chartId, chart.chartType, chart.data);
+                        });
+                    } else {
+                        console.error(event.message);
+                    }
+                }
+            );
+        }
+        function getFormattedDate(date) {
+            return date.toISOString().split('T')[0]; // Returns 'YYYY-MM-DD'
+        }
+        function starter() {
+            // Initial chart drawing logic (if needed)
+        }
+        </script>
+    </apex:page>

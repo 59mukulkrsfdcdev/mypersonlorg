@@ -1,0 +1,140 @@
+<aura:component implements="lightning:actionOverride"
+                access="global" 
+                controller="overrideStandabuttonwithLC">
+     <!--Attributes for Expenses Object-->
+    <aura:attribute name="exp" type="expense__C" default="{'sobjectType':'Expense__c',
+                                                       	   'Expense_Date__c':'',
+                                                           'TA__c':'',
+                                                           'DA__c':'',
+                                                           'Other_Expense__c':'',
+                                                           'Mode__c':'',
+                                                           'Expense_Comments__c':''
+                                                          }" />
+    <!--Attributes for Dual Pick list-->
+    <aura:attribute name="options" type="List" default="[
+        { label: 'Auto', value: 'Auto' },
+        { label: 'Bike', value: 'Bike' },
+        { label: 'Bus', value: 'Bus' },
+        { label: 'Cab', value: 'Cab' },
+        { label: 'Others', value: 'Others' }]"/>
+    
+    <!-- Attributes for Page Tap  -->
+    <aura:attribute name="res" type="String" default="1"/>
+    	{!v.res.id}
+    
+   <!--  Attributes for File Upload-->
+    <aura:attribute name="recordId" type="Id" />   
+    <aura:attribute name="accept" type="List" default="['.png', '.jpg', '.jpeg']" />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    
+     <!--  Attributes to get Uploaded  File Name-->
+    <aura:attribute name="fileList" type="object"  />
+    
+    
+     <aura:attribute name="url" type="String"/>
+
+  <lightning:card >
+      <div class="slds-box" >
+          <lightning:progressIndicator currentStep="{!v.res}" type="path" variant="base" hasError="false">
+       	  <lightning:progressStep label="Expense Details" value="1"/>
+        <lightning:progressStep label="Upload Documents" value="2"/>
+    	  </lightning:progressIndicator>
+      </div>
+      <lightning:tabset selectedTabId="{!v.res}" onselect="{!c.show}" >
+      	<lightning:tab label="Expense Details" id="1">
+          	       <div >
+       			<div class="slds-form--stacked">
+                   <div class="slds-box" >
+		            <div class="slds-form-element" >  
+               		 <div class="slds-form-element__control" >
+				  <table>
+                         <colgroup>
+                             <col span="1" style="width: 50%;"/>
+                             <col span="1" style="width: 50%;"/>
+                           
+    					</colgroup>
+                    	<tr>
+                        	<td>
+                             <ui:inputDate aura:id="expDate"  label="Expense Date" required="true"  value="{!v.exp.Expense_Date__c}" displayDatePicker="true" />
+                            </td>
+							<td>
+                              <ui:inputNumber aura:id="expTravelExpense" label="TA" value="{!v.exp.TA__c}" />
+                            </td>
+                        </tr>
+                      <tr>
+                        	<td>
+                             <ui:inputNumber aura:id="expDayExpense"  label="DA"  value="{!v.exp.DA__c}"  />
+                            </td>
+							<td>
+                              <ui:inputNumber aura:id="expOtherExpense" label="Other Expense" value="{!v.exp.Other_Expense__c}" />
+                            </td>
+                        </tr> 
+                    </table>
+	
+						<lightning:dualListbox name="Transport"
+                           label= "Mode of Transport"
+                           sourceLabel="Available"
+                           selectedLabel="Selected"
+                           fieldLevelHelp="Select your Mode of Transport"
+                           options="{!v.options}"
+                           value="{!v.exp.Mode__c}"
+                          />                         
+		
+                   <ui:inputTextArea  aura:id="expExpenseComments"  class="slds-input"  label="Expense Comments"  required="true" value="{!v.exp.Expense_Comments__c}" rows="3" change="{!c.check}" />
+      
+             
+			  
+                        </div>                     
+                    </div>
+      		</div>
+
+            <div class="slds-m-around--medium">
+                	<lightning:navigation aura:id="navService"/>
+                  <lightning:button variant="destructive" label="Cancel" title="Destructive action"  onclick="{!c.closePage}"/>
+
+                <button class="slds-button slds-button--brand" onclick="{!c.createExpense}">Save and Next</button>
+                
+            </div>
+        </div>
+      </div>  
+         </lightning:tab>
+          
+         
+   		 <lightning:tab  label="Upload Bills" id="2">
+            <center>
+         		<div class="slds-box">
+                
+             
+                <lightning:fileUpload label="Attach receipt"
+                    				  name="fileUploader"
+       								  multiple="{!v.multiple}"
+                     				  disabled="{!v.disabled}"
+        							  recordId="{!v.recordId}"
+       			 					 onuploadfinished="{!c.handleUploadFinished}"
+ 										/> 
+                    
+             
+                </div>
+             
+         </center>
+             
+ 				<aura:if isTrue="{!not(empty(v.fileList))}">
+                     <lightning:card title="Uploaded Files">
+                <div class="slds-box">
+            	 <aura:iteration items="{!v.fileList}" var="item">
+        			<h1>{!item.value}</h1>
+    				</aura:iteration>	
+                         </div>
+                    </lightning:card>
+             </aura:if>
+             
+			<div class="slds-m-around--medium">
+                <lightning:button variant="destructive" label="Close" title="Destructive action" onclick="{!c.closePage}"/>
+  				<lightning:button variant="brand" label="Previous" title="Brand action" onclick="{!c.prev }" />
+                <lightning:button variant="success" label="Submit" title="Success" onclick="{!c.createRecord}"/>
+            </div>   
+         </lightning:tab>
+      </lightning:tabset>
+  </lightning:card>
+</aura:component>

@@ -1,0 +1,18 @@
+<template>
+    <div>
+        <lightning-tabset selected-tab-id="tabDetails">
+            <lightning-tab label="Related" title="Show Related Records"> 
+                <h1>This is related Tab</h1>
+            </lightning-tab>
+            <lightning-tab label="Details" title="Show Detail Record" itemid="tabDetails"> <h1>This is details Tab</h1></lightning-tab>
+            <lightning-tab label="News" title="Show News Update"> 
+                <lightning-tabset variant="scoped"> 
+                    <lightning-tab label="Activity"><h1> This is activity tab </h1> </lightning-tab>
+                    <lightning-tab label="New Task" icon-name="action:new_task"> <h1>This is a New Task tab </h1></lightning-tab>
+                    <lightning-tab label="New Event" icon-name="action:new_event"> <h1> This is Event Tab </h1></lightning-tab>
+                </lightning-tabset>
+            </lightning-tab>
+            <lightning-tab label ="chatter" title ="Show Chatter History"></lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

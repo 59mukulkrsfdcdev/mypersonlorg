@@ -1,0 +1,26 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+	<aura:attribute name="isButtonActive" type="Boolean" default="true" />
+    <aura:attribute name="checkboxcondition" type="Boolean" default="true" />
+    <aura:attribute name="checktrueorfalse" type="Boolean" default="true" />
+
+    <aura:attribute name="attrsummary" type="String"/>
+	 <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+	
+   <div>
+       <lightning:input type="checkbox" aura:id="checkBoxId" label="Check Box" name="checkbox" onchange="{!c.onClickCheckBox}" disabled="{!v.checkboxcondition}"/>
+    <aura:if isTrue="{!v.checktrueorfalse}">
+        
+    
+   		 <lightning:button variant="brand"  label="Enable Check Box" onclick="{!c.enable}" disabled= "{!v.isenableButtonActive}"/>
+        
+	<aura:set attribute="else">
+        
+    
+    <lightning:button variant="brand"  label="Disable Check Box" onclick="{!c.Disable}" disabled= "{!v.issisableButtonActive}"/>
+        </aura:set>
+    </aura:if>
+    
+    </div>
+
+</aura:component>

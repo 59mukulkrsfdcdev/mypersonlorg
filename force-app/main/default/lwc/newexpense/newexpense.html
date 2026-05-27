@@ -1,0 +1,77 @@
+<template >
+    
+    <lightning-card title="New Expense" icon-name="custom:custom19">
+        <lightning-progress-indicator current-step="2" type="path"  variant="base">
+            <lightning-progress-step label="Expense details" value="1"></lightning-progress-step>
+            <lightning-progress-step label="Upload Files" value="2"></lightning-progress-step>
+        </lightning-progress-indicator>
+        
+        <div class="slds-grid">
+            
+
+            <lightning-record-edit-form 
+            object-api-name="Expense__c" 
+            density="comfy" 
+            onsuccess={handleUpload}
+            >
+            
+
+            <lightning-layout multiple-rows>
+                <template if:true={areDetailsVisible}>
+
+                <lightning-layout-item size="12">
+                <lightning-messages></lightning-messages>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" >
+                    
+                    <div  class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field  field-name="Expense_Date__c"></lightning-input-field></div>
+                        <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field  field-name="DA__c"></lightning-input-field> </div>
+                        <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field  field-name="TA__c"></lightning-input-field>  </div>   
+                        <div class="slds-col slds-size_1-of-2">                           
+                        <lightning-input-field  field-name="Other_Expense__c"></lightning-input-field></div>
+                    </div>
+
+                        <lightning-input-field field-name="Mode__c"></lightning-input-field>
+                        <lightning-input-field field-name="Expense_Comments__c"></lightning-input-field>
+                </lightning-layout-item>
+        
+                <div class="slds-m-top_medium">
+                    <template if:false={showButtons}>
+                        <lightning-button class="slds-m-top_small" label="Cancel" onclick={handleReset}></lightning-button>
+                        &nbsp;&nbsp;
+                        <lightning-button variant="brand" type="submit" name="Create Account" label="Save and Next" onclick={handleChange}></lightning-button>
+                    </template>
+                </div>
+            </template>
+            
+            </lightning-layout>
+            </lightning-record-edit-form>
+             
+
+
+            <template if:true={recId}>
+            <div class="slds-p-around_medium lgc-bg">
+            <div class="demo-only" style="max-width:320px">
+            <div class="slds-form-element">
+            <span class="slds-form-element__label" id="file-selector-primary-label"></span>
+            <div class="slds-form-element__control">
+            <div class="slds-file-selector slds-file-selector_images">
+            <div class="slds-file-selector__dropzone slds-has-drag-over"><lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={recId} onuploadfinished={handleUploadFinished} multiple></lightning-file-upload>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <br />
+            <lightning-button variant="brand" name="Finish" label="Finish" onclick={handleFinish}></lightning-button>
+            </div>
+            </template>
+        
+        </div>
+    </lightning-card>
+</template>

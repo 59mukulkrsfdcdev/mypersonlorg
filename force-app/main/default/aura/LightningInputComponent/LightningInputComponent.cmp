@@ -1,0 +1,95 @@
+<aura:component >
+	<lightning:input type="checkbox" label="Red" name="red" checked="true"/>
+<lightning:input type="checkbox" label="Blue" name="blue" />
+    
+    
+    <lightning:input type="checkbox" label="Add pepperoni" name="addPepperoni" checked="true" value="pepperoni" />
+<lightning:input type="checkbox-button" label="Add salami" name="addSalami" value="salami" />
+    
+    
+    <lightning:input type="color" label="Color" name="color" value="#EEEEEE" />
+    <lightning:input type="date" label="Birthday" name="date" />
+    <lightning:input type="datetime" label="Created date" name="datetime" />
+    
+    <lightning:input type="email" label="Email"
+            pattern=".+@example.com"
+            placeholder="username@example.com" />
+    <lightning:input type="email" label="Email"
+          maxlength="50"
+          messageWhenTooLong="Your email address must not be more than 50 characters." />
+    <lightning:input type="email" label="Email"
+          maxlength="5"
+          messageWhenTooShort="Your email address must be more than 5 characters." />
+    <lightning:input type="email" label="Email"
+                multiple="true" />
+    <lightning:input type="number" name="number" label="Number" value="12345"/>
+    <lightning:input type="number" name="ItemPrice"
+    				 label="Price" value="12345" step=".01" formatter="currency"/>
+    
+    
+    <lightning:input type="number" name="decimal" label="Enter a decimal value" step="0.001"/>
+<lightning:input type="number" name="percentVal" label="Enter a percentage value" formatter="percent" step="0.01" />
+<lightning:input type="number" name="currencyVal" label="Enter a dollar amount" formatter="currency" step="0.01" />
+    
+    <lightning:input type="password" label="Password" name="password" />
+    <lightning:input type="range" label="Number" name="number" min="0" max="10" />
+    
+    
+    <lightning:input type="search" label="Search" name="search" />
+    <lightning:input type="search" label="Search" isLoading="true" />
+    
+    <lightning:input type="tel" label="Telephone" name="tel" value="343-343-3434" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+    <lightning:input label="Name" name="myname" />
+    <lightning:input type="time" label="Closing time" name="time" />
+    <lightning:input type="toggle" label="Toggle value" name="togglevalue" checked="true" messageToggleActive="On" messageToggleInactive="Off"/>
+    <lightning:input type="url" label="Website" name="website" />
+    
+    
+    
+    <lightning:input name="quantity" value="1234567890" label="Quantity" maxlength="10" />
+    <lightning:input name="input" aura:id="myinput" label="Enter some text" onblur="{! c.handleBlur }" />
+    
+    <lightning:input aura:id="field" label="First name" placeholder="First name" required="true" />
+        <lightning:input aura:id="field" label="Last name" placeholder="Last name" required="true"  />
+        <lightning:button aura:id="submit" type="submit" label="Submit" onclick="{! c.onClick }" />
+    
+    <lightning:input name="firstname" label="First Name" minlength="5"
+    messageWhenTooShort="Your entry must be at least 5 characters." />
+    
+    <lightning:input aura:id="inputCmp" label="Enter your name:" name="fullName" />
+        <lightning:button label="Register" onclick="{! c.register }" />
+    
+    <lightning:input label="Event Name"
+    placeholder="Grand Opening"
+    fieldLevelHelp="The event name must be less than 50 characters"
+    maxlength="50"/>
+    
+    
+    
+     <aura:attribute name="selection" type="String" default="None"/>
+      <fieldset>
+          <legend>Select a color:</legend>
+          <lightning:input type="checkbox" label="Red"
+              name="color1" value="red" aura:id="colors"/>
+          <lightning:input type="checkbox" label="Blue"
+              name="color2" value="blue" aura:id="colors"/>
+          <lightning:input type="checkbox" label="Green"
+              name="color3" value="green" aura:id="colors"/>
+      </fieldset>
+  <lightning:button label="Submit" onclick="{!c.submitForm}"/>
+  <p>Checked items: {!v.selection}</p>
+    
+    <aura:attribute name="textvalue" type="String" default="Initial value"/>
+        <lightning:input aura:id="myinput" type="text"
+            value="{! v.textvalue }"  label="Enter some text"
+            onchange="{! c.handleChange}"
+            />
+        <lightning:button aura:id="focus" label="Focus selection"
+            onclick="{! c.handleClick }" />
+    
+    
+    
+    
+    
+    
+</aura:component>

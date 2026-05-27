@@ -1,0 +1,32 @@
+<apex:page controller="AccountsPaginationController" tabStyle="Candidate__c" sidebar="false" setup="false" showHeader="true" >
+<apex:sectionHeader title="Accounts Records" subtitle="Accounts Pagination"/>
+    <apex:form >
+        <apex:pageBlock id="pgBlock">
+            <apex:pageBlockTable value="{!Accounts}" var="acc">
+                <apex:column headerValue="Account Name">
+                    <apex:outputLink value="/{!acc.id}" target="_blank">{!acc.name}</apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column value="{!acc.industry}"/>
+                    <apex:column value="{!acc.type}"/>
+                    <apex:column value="{!acc.rating}"/>
+                    <apex:column value="{!acc.annualrevenue}"/>
+                    <apex:column value="{!acc.phone}"/>
+                    <apex:column value="{!acc.Active__c}"/>
+            
+            </apex:pageBlockTable>
+            
+            <apex:commandButton rendered="{!setCon.hasPrevious}" value="First" action="{!setCon.first}" reRender="pgBlock"/> &nbsp;&nbsp;
+            <apex:commandButton rendered="{!setCon.hasPrevious}" value="Previous" action="{!setCon.Previous}" reRender="pgBlock"/> &nbsp;&nbsp;
+               <apex:outputText rendered="{!(setCon.PageNumber*setCon.PageSize)<setCon.ResultSize}" value="{!setCon.PageNumber*setCon.PageSize} Of {!setCon.ResultSize}"></apex:outputText> &nbsp;&nbsp;
+                <apex:outputText rendered="{!(setCon.PageNumber*setCon.PageSize)>=setCon.ResultSize}" value="{!setCon.ResultSize} Of {!setCon.ResultSize}"></apex:outputText> &nbsp;&nbsp;
+            
+            <apex:commandButton rendered="{!setCon.hasNext}" value="Next" action="{!setCon.Next}" reRender="pgBlock"/> &nbsp;&nbsp;
+            
+            <apex:commandButton rendered="{!setCon.hasNext}" value="Last" action="{!setCon.Last}" reRender="pgBlock"/>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+
+</apex:page>

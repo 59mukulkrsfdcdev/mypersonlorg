@@ -1,0 +1,186 @@
+<apex:page controller="PageViewController">
+    
+    
+    
+   <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  </head>
+  <style>
+    .maincontainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+     }
+     .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                flex-wrap: wrap;
+                margin-top: 30px;
+     }
+     .chart {
+         width:350px;
+         // height:300px;
+     }
+      div{
+       
+      }
+      .containerhead{
+            width: 100%;
+            height: 22px;
+            background-color: beige;
+            color: #4353ad;
+            font-size: 18px;
+            text-align: left;
+            padding: 10px;
+            font-weight: bold;
+      }
+        .maincontainerhead{
+                 width: 100%;
+                /* height: 22px; */
+                background-color: beige;
+                color: #4353ad;
+                font-size: 18px;
+                text-align: left;
+                padding: 10px;
+                font-weight: bold;
+                /* margin-left: 52px;*/
+
+      }
+       label {
+          vertical-align: top;
+        }
+  </style>
+  <body>
+       <div class="maincontainer">
+         <div class="maincontainerhead" >
+                   <label for="profile"> Profile</label>
+                       
+
+                   <select name="profile" id="profile" label="Profile">
+                  <option value="System Administrator">System Administrator</option>
+                  <option value="Training Platform Profile">Training Platform Profile</option>
+                  <option value="Chatter Free User">Chatter Free User</option>
+                </select>
+                   <label for="user"> User</label>
+                     <select name="user" id="user">
+                      <option value="Praveen Kumar">Praveen Kumar</option>
+                      <option value="Praveen Kumar">Praveen Kumar</option>
+                      <option value="User Manager">User Manager</option>
+ 
+                    </select>   
+                   <label for="startdate"> Start Date</label>
+                      <input type="date" id="startdate" name="startdate"></input>
+                   <label for="enddate"> End Date</label>
+                      <input type="date" id="enddate" name="enddate"></input>
+                       
+         </div>
+         <div class="container" >
+             <div class="containerhead" > Arun kumar </div>             
+              <div class="chart"  id="chart_div1"></div>
+              <div class="chart"  id="chart_div2">   </div>
+              <div class="chart"  id="chart_div3">   </div>
+              <div class="chart"  id="chart_div4">   </div>
+              
+         </div>
+          <div class="container" >
+              <div class="containerhead" > Sunil George </div>             
+              <div class="chart"  id="chart_div5"></div>
+              <div class="chart"  id="chart_div6">   </div>
+              <div class="chart"  id="chart_div7">   </div>
+              <div class="chart"  id="chart_div8">   </div>
+         </div>
+          <div class="container" >
+              <div class="containerhead" > Rakesh Reddy </div>             
+               <div class="chart"  id="chart_div9"></div>
+              <div class="chart"  id="chart_div10">   </div>
+              <div class="chart"  id="chart_div11">   </div>
+              <div class="chart"  id="chart_div12">   </div>
+         </div>
+          <div class="container" >
+              <div class="containerhead" > Shebin Mathew </div>             
+              <div class="chart"  id="chart_div13"></div>
+              <div class="chart"  id="chart_div14">   </div>
+              <div class="chart"  id="chart_div15">   </div>
+              <div class="chart"  id="chart_div16">   </div>
+         </div> 
+              
+              
+      </div>  
+  </body>
+       <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(starter);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and 
+      // draws it.
+      
+       
+     function drawColumnChart(i) {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Density", { role: "style" } ],
+        ["Copper", 8.94, "#b87333"],
+        ["Silver", 10.49, "silver"],
+        ["Gold", 19.30, "gold"],
+        ["Platinum", 21.45, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Number of pages by Date ",
+        width: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+       console.log("chart_div"+i);
+      var container = document.getElementById("chart_div"+i);
+      console.log(container);
+      var chart = new google.visualization.ColumnChart(container);
+      chart.draw(view, options);
+   }
+   function drawDonutChart(i) {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          pieHole: 0.4,
+        };
+        var container = document.getElementById("chart_div"+i);
+        var chart = new google.visualization.PieChart( container);
+        chart.draw(data, options);
+      } 
+       
+     function starter(){
+        for(var i=1;i<25;i++){
+            if(i % 4 ==  0){
+              drawDonutChart(i) 
+            }else{
+              drawColumnChart(i)
+
+            }
+        }
+     }  
+    </script>
+</apex:page>

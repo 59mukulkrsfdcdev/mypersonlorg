@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technical_Skills__c</fullName>
+    <label>Technical Skills</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Adv. Java</fullName>
+                <default>false</default>
+                <label>Adv. Java</label>
+            </value>
+            <value>
+                <fullName>ASAP Net</fullName>
+                <default>false</default>
+                <label>ASAP Net</label>
+            </value>
+            <value>
+                <fullName>C</fullName>
+                <default>false</default>
+                <label>C</label>
+            </value>
+            <value>
+                <fullName>C# Net</fullName>
+                <default>false</default>
+                <label>C# Net</label>
+            </value>
+            <value>
+                <fullName>C++</fullName>
+                <default>false</default>
+                <label>C++</label>
+            </value>
+            <value>
+                <fullName>Core Java</fullName>
+                <default>false</default>
+                <label>Core Java</label>
+            </value>
+            <value>
+                <fullName>J2EE</fullName>
+                <default>false</default>
+                <label>J2EE</label>
+            </value>
+            <value>
+                <fullName>Manual Testing</fullName>
+                <default>false</default>
+                <label>Manual Testing</label>
+            </value>
+            <value>
+                <fullName>Ms. Net</fullName>
+                <default>false</default>
+                <label>Ms. Net</label>
+            </value>
+            <value>
+                <fullName>ORACEL</fullName>
+                <default>false</default>
+                <label>ORACEL</label>
+            </value>
+            <value>
+                <fullName>QTP</fullName>
+                <default>false</default>
+                <label>QTP</label>
+            </value>
+            <value>
+                <fullName>SAP</fullName>
+                <default>false</default>
+                <label>SAP</label>
+            </value>
+            <value>
+                <fullName>Selinium</fullName>
+                <default>false</default>
+                <label>Selinium</label>
+            </value>
+            <value>
+                <fullName>SQL Server</fullName>
+                <default>false</default>
+                <label>SQL Server</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

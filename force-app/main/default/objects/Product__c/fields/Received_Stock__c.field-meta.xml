@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Received_Stock__c</fullName>
+    <label>Received Stock</label>
+    <summarizedField>Stock__c.Quantity__c</summarizedField>
+    <summaryForeignKey>Stock__c.Product__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

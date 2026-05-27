@@ -1,0 +1,111 @@
+<apex:page standardController="Account"  extensions="QuotepdfController"  renderAs="{!renderas}" showHeader="false" standardStylesheets="false"  applyBodyTag="false" applyHtmlTag="false" >
+<html>
+    <style>
+         .square{
+                border-bottom-left-radius:10px;
+                border: 3px solid #94175f;
+                border-radius: 22px !important;
+                
+                }
+    </style>
+    <body>
+         <div style="page-break-after:auto;">
+                    <table >
+                        
+                        <tr>
+                            <td><apex:image value="{!$Resource.Submitted}" width="50" height="50" style="text-align:left"/></td>
+                            <td><h3>&nbsp;&nbsp;&nbsp;Account Details</h3>&nbsp;</td>
+                            
+                            
+                        </tr>
+                        
+                    </table >
+              <table   style="border-collapse: collapse;"  border="1" width="100%">
+                        <tr>
+                            <td bgcolor="#B6B6B4"><b>Detail</b> </td>
+                            <td bgcolor="#B6B6B4"></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>{!Name}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>AnnualRevenue</td>
+                            <td>{!Account.AnnualRevenue}</td>
+                           
+                        </tr>
+                   <tr>
+                            <td>Total Revenue amount</td>
+                            <td>{!Account.Total_Revenue_amount__c}</td>
+                           
+                        </tr>
+                    <tr>
+                            <td>Websitet</td>
+                            <td>{!Account.Website}</td>
+                           
+                        </tr>
+                  <tr style="display: {!IF((ISBLANK(Account.Fax)), 'none', 'table-row')};">
+                            <td >Fax</td>
+                            <td >{!Account.Fax}</td>
+                           
+                        </tr>
+                   <tr>
+                            <td>Rating</td>
+                            <td>{!Account.Rating}</td>
+                           
+                        </tr>
+                    <tr>
+                            <td>Start Date and Time</td>
+                            <td>{!Account.Actual_Start_Date__c}</td>
+                           
+                        </tr>
+                    <tr>
+                            <td>End Date and Time</td>
+                            <td>{!Account.Actual_End_Date__c}</td>
+                           
+                        </tr>
+                   <tr>
+                            <td>Amount in Word</td>
+                            <td >{!numToWord}</td>
+                           
+                        </tr>
+ 
+                   <tr>
+                            <td>Date:-</td>
+                            <td> <apex:outputText value="{!DAY(TODAY())}-{!MONTH(TODAY())}-{!YEAR(TODAY())}"/></td>
+                           
+                        </tr>
+ 
+                    </table>
+              <table  class="square"  width="100%">
+                        <tr>
+                            
+                            <td width="1%"><h2 style="font-family:fira-Sans;"> Terms n Condition</h2>
+                                - One time cost to be billed on signing of the Agreement<br/> 
+                                
+                                - Invoice to be raised at the beginning of the quarter<br/> 
+                                - Payment has to be made within 15 days of raising of invoice<br/> 
+                               
+                                - Government taxes and duties shall be levied based on prevailing rates<br/> 
+                                 
+                                - The subscription fee includes the maintenance cost towards the 
+                                application                        </td>
+                        </tr>
+                    </table>
+                    
+
+                    
+                  
+                    <br/> 
+                  
+                    <br/> 
+                  
+                    <br/> 
+                  
+                    <br/> 
+                  
+                </div>
+    </body>
+    </html>
+</apex:page>

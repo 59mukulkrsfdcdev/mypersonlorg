@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_IT_Position_Record_Type</fullName>
+    <active>true</active>
+    <description>Non IT Position Record Type</description>
+    <label>Non IT Position Record Type</label>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>Bangalore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delhi</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Position_Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Position</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

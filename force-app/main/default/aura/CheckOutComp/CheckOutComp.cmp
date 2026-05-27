@@ -1,0 +1,6 @@
+<aura:component controller="Assignmet" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.checkoutClick}"></aura:handler>
+    <aura:attribute name="checkout" type="object" />
+    <aura:handler name="change" value="{!v.checkout}" action="{!c.checkoutChange}"></aura:handler>
+	
+</aura:component>
